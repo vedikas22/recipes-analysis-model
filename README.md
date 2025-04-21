@@ -6,4 +6,4 @@ dance
 
 ## Cleaning and EDA
 
-<iframe src="assets/10-80-enrollment.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/calories_distribution.html" width=800 height=600 frameBorder=0></iframe>
