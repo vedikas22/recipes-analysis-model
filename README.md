@@ -56,6 +56,7 @@ Finally, I checked for missing values in key columns such as rating, preparation
 Overall, these cleaning steps were closely aligned with how the data was likely generated—through user submissions, automated scraping, and imperfect manual inputs. Cleaning the data this way improved the quality and interpretability of the visualizations and ensured that the trends I observed reflected genuine patterns rather than noise or errors.
 
 Here is the head of the data :
+
  <iframe
  src="assets/table.html"
  width="800"
@@ -65,53 +66,65 @@ Here is the head of the data :
 
 
 Here is a univariate analysis of distributions from the data : 
+
  <iframe
  src="assets/ingredients_distribution.html"
  width="1000"
  height="800"
  frameborder="0"
  ></iframe>
+
 This plot shows the distribution of the number of ingredients used in recipes. The majority of recipes tend to include between 5 and 15 ingredients, with a sharp drop-off for longer ingredient lists. This suggests that simpler recipes are more common, potentially because they are easier for users to prepare. This is an insight that aligns with our goal of identifying characteristics of highly rated, accessible recipes.
+
  <iframe
  src="assets/calories_distribution.html"
  width="1000"
  height="800"
  frameborder="0"
  ></iframe>
+
 The calorie distribution is right-skewed, with most recipes containing fewer than 1000 calories. There are a few extreme outliers with very high caloric values, likely from dense or multi-serving dishes. This plot helps illustrate the diversity in recipe health profiles and can guide users looking for lighter or heavier meals.
+
 <iframe
  src="assets/rating_distribution.html"
  width="1000"
  height="800"
  frameborder="0"
  ></iframe>
+
 The rating distribution is highly skewed toward the maximum rating of 5, indicating that users generally rate recipes very favorably. While this suggests strong satisfaction, it also limits the ability to differentiate between moderately and highly liked recipes, which is something to consider in modeling user preferences.
+
 Here is a bivariate analysis of distributions from the data : 
-<iframe
- src="assets/calories_vs_rating.html"
- width="1000"
- height="800"
- frameborder="0"
- ></iframe>
+
+<div style="margin: 0 auto; padding: 0; max-width: 800px;">
+  <iframe src="/assets/calories_vs_rating.html" width="100%" height="450" frameborder="0" style="margin: 0; padding: 0;"></iframe>
+</div>
+
 This scatter plot explores the relationship between calories and user ratings. There is no strong correlation, but we observe that high-calorie recipes are rated just as favorably as low-calorie ones, suggesting that calorie content does not significantly affect user satisfaction.
+
 <iframe
  src="assets/ingredients_vs_rating.html"
  width="1000"
  height="800"
  frameborder="0"
  ></iframe>
+
 This box plot shows how the number of ingredients relates to user ratings. While most recipes are highly rated regardless of complexity, those with very few or very many ingredients show slightly more variability, hinting that balance in ingredient count may appeal more consistently to users.
+
 <iframe
  src="assets/prep_time_vs_rating.html"
  width="1000"
  height="800"
  frameborder="0"
  ></iframe>
+
 This scatter plot, with preparation time shown on a logarithmic scale, reveals that most highly rated recipes cluster between 10 and 100 minutes of prep time. Recipes with extremely short or long prep times show more mixed ratings, suggesting that users prefer moderate effort in cooking.
+
 <iframe
  src="assets/sugar_by_rating.html"
  width="1000"
  height="800"
  frameborder="0"
  ></iframe>
+
 This box plot displays the distribution of sugar content across different rating levels. There is no clear pattern, indicating that sugar level alone is not a strong driver of user satisfaction. However, outliers suggest that some exceptionally sweet or non-sweet recipes still achieve high ratings.
