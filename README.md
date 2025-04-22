@@ -296,14 +296,6 @@ While the accuracy appears high (**88.3%**), the model is **not good** in its cu
 - It fails to identify any low-rated recipes.
 - High accuracy is misleading because the model predicts every recipe as high-rated, benefiting from the skewed distribution.
 
-### Suggested Improvements:
-- Use `class_weight='balanced'` in logistic regression.
-- Try resampling techniques (e.g., SMOTE, undersampling).
-- Add more features:
-  - Nutritional values (e.g., `calories`, `protein_g`, etc.)
-  - Recipe structure (e.g., `n_steps`)
-  - Engineered features (e.g., time per ingredient)
-
 ## 🔍 Final Model Rationale and Evaluation
 
 ### 🧩 Feature Engineering: What I Added and Why
@@ -316,7 +308,7 @@ To improve my model, I added two engineered features based on domain intuition a
 - **`fat_to_protein_ratio`**  
   Rather than considering `total_fat_g` and `protein_g` separately, I created a ratio feature to capture a recipe’s **nutritional richness vs. healthfulness**. This ratio provides insight into how indulgent or balanced a recipe might be, which is likely to influence user ratings. For example, protein-rich meals may be preferred for health-conscious users, while fatty recipes may appeal more to indulgence seekers.
 
-These features were chosen **based on the data-generating process**—not just for boosting accuracy. They reflect reasonable assumptions about what might drive user satisfaction, such as ease of preparation (normalized time) and nutritional balance (fat vs. protein).
+These features were chosen **based on the data-generating process**, not just for boosting accuracy. They reflect reasonable assumptions about what might drive user satisfaction, such as ease of preparation (normalized time) and nutritional balance (fat vs. protein).
 
 ---
 
