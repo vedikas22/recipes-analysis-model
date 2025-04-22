@@ -108,12 +108,16 @@ This scatter plot, with preparation time shown on a logarithmic scale, reveals t
 
 This box plot displays the distribution of sugar content across different rating levels. There is no clear pattern, indicating that sugar level alone is not a strong driver of user satisfaction. However, outliers suggest that some exceptionally sweet or non-sweet recipes still achieve high ratings.
 
-Here are the Interesting Aggregates discovered :
+Here are the Interesting Aggregates discovered:
 
-<div style="margin: 0 auto; padding: 0; max-width: 800px;">
-  <iframe src="assets/calorie_group.html" width="100%" height="450" frameborder="0" style="margin: 0; padding: 0;"></iframe>
-</div>
-
+<table>
+  <tr><th>calorie_level</th><th>avg_rating</th><th>num_ratings</th></tr>
+  <tr><td>Very Low</td><td>4.41</td><td>72671</td></tr>
+  <tr><td>Low</td><td>4.41</td><td>78912</td></tr>
+  <tr><td>Medium</td><td>4.36</td><td>42074</td></tr>
+  <tr><td>High</td><td>4.35</td><td>19018</td></tr>
+  <tr><td>Very High</td><td>4.27</td><td>17958</td></tr>
+</table>
 The data suggests that recipes with around 3 to 8 ingredients tend to receive the highest average ratings. This may indicate a user preference for recipes that are neither too simple nor too complex—balancing ease of preparation with flavor and variety. Recipes with very few ingredients might be seen as too basic, while those with too many could feel overwhelming or impractical for everyday cooking.
 
 <div style="margin: 0 auto; padding: 0; max-width: 800px;">
