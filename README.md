@@ -305,6 +305,7 @@ To optimize model performance, I used **`GridSearchCV` with 5-fold cross-validat
   'classifier__max_depth': None,
   'classifier__min_samples_split': 2
 }
+```
 
 ### 📈 Performance Comparison
 
