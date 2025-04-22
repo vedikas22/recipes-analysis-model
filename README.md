@@ -75,5 +75,4 @@ Here is a univariate analysis of distributions from the data :
  frameborder="0"
  ></iframe>
 
-
 This plot shows the distribution of the number of ingredients used in recipes. The majority of recipes tend to include between 5 and 15 ingredients, with a sharp drop-off for longer ingredient lists. This suggests that simpler recipes are more common, potentially because they are easier for users to prepare — an insight that aligns with our goal of identifying characteristics of highly rated, accessible recipes.
