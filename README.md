@@ -361,9 +361,7 @@ While the baseline model achieved higher **accuracy**, it failed to predict **an
 - **Low precision and recall for Class 0 (Low Rating)**:  
   - Precision is limited due to **3,681 false positives**.
   - Recall for low ratings is approximately **32.7%**:  
-    \[
-    \frac{1792}{1792 + 3681} \approx 0.327
-    \]
+
 
 - **High number of false negatives (6,691)**:  
   Many high-rated recipes are missed, which could negatively affect user trust in recipe recommendations.
