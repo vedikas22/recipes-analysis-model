@@ -107,3 +107,23 @@ This scatter plot, with preparation time shown on a logarithmic scale, reveals t
 </div>
 
 This box plot displays the distribution of sugar content across different rating levels. There is no clear pattern, indicating that sugar level alone is not a strong driver of user satisfaction. However, outliers suggest that some exceptionally sweet or non-sweet recipes still achieve high ratings.
+
+Here are the Interesting Aggregates discovered :
+
+<div style="margin: 0 auto; padding: 0; max-width: 800px;">
+  <iframe src="assets/calorie_group.html" width="100%" height="450" frameborder="0" style="margin: 0; padding: 0;"></iframe>
+</div>
+
+The data suggests that recipes with around 3 to 8 ingredients tend to receive the highest average ratings. This may indicate a user preference for recipes that are neither too simple nor too complex—balancing ease of preparation with flavor and variety. Recipes with very few ingredients might be seen as too basic, while those with too many could feel overwhelming or impractical for everyday cooking.
+
+<div style="margin: 0 auto; padding: 0; max-width: 800px;">
+  <iframe src="assets/ingredients_group.html" width="100%" height="450" frameborder="0" style="margin: 0; padding: 0;"></iframe>
+</div>
+
+The trend is clear: shorter prep times receive higher average ratings. Recipes under 15 minutes are the most highly rated, and the average rating declines as the prep time increases. This supports the idea that users tend to favor quick, convenient recipes, especially for weeknight cooking, reinforcing that ease and efficiency are major drivers of satisfaction.
+
+<div style="margin: 0 auto; padding: 0; max-width: 800px;">
+  <iframe src="assets/time_group.html" width="100%" height="450" frameborder="0" style="margin: 0; padding: 0;"></iframe>
+</div>
+
+Recipes with lower calorie content (Very Low and Low) have slightly higher average ratings than high-calorie dishes. This suggests a possible health-conscious trend among users, where lighter meals are more appreciated. However, the drop-off is gradual, indicating that users don’t necessarily dislike high-calorie recipes,just that lighter options are more broadly favored.
