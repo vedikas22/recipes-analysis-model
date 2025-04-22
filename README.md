@@ -305,3 +305,69 @@ To optimize model performance, I used **`GridSearchCV` with 5-fold cross-validat
   'classifier__max_depth': None,
   'classifier__min_samples_split': 2
 }
+
+### 📈 Performance Comparison
+
+| Metric                | Baseline Model (Logistic Regression) | Final Model (Random Forest) |
+|-----------------------|--------------------------------------|------------------------------|
+| **Accuracy**          | 88.3%                                | 77.9%                        |
+| **F1 (Class 1 - High)** | 0.94                               | 0.87                         |
+| **F1 (Class 0 - Low)**  | 0.00                               | 0.26                         |
+| **Macro F1**          | 0.47                                 | **0.56**                     |
+| **Weighted F1**       | 0.83                                 | **0.80**                     |
+
+While the baseline model achieved higher **accuracy**, it failed to predict **any low-rated recipes**. In contrast, the final **Random Forest** model improves balance across both classes and yields a much more meaningful **F1-score** for low-rated recipes (Class 0). This makes it a significantly better model overall, especially for **imbalanced data**.
+
+### 📊 Confusion Matrix Summary
+
+<div style="margin: 0 auto; padding: 0; max-width: 800px;">
+  <iframe src="assets/confusion_matrix.html" width="100%" height="450" frameborder="0" style="margin: 0; padding: 0;"></iframe>
+</div>
+
+|                      | Predicted Low (0) | Predicted High (1) | Total |
+|----------------------|-------------------|---------------------|-------|
+| **Actual Low (0)**   | **1792** (True Negatives) | **3681** (False Positives) | 5473 |
+| **Actual High (1)**  | **6691** (False Negatives) | **34722** (True Positives) | 41413 |
+
+---
+
+### 🔍 Interpretation
+
+- **True Positives (TP)**: 34,722  
+  The model correctly predicted high ratings for these recipes.
+
+- **True Negatives (TN)**: 1,792  
+  The model correctly predicted low ratings.
+
+- **False Positives (FP)**: 3,681  
+  These recipes were actually low-rated but predicted as high-rated. This reduces trust in highly-rated suggestions.
+
+- **False Negatives (FN)**: 6,691  
+  These were actually high-rated recipes that the model predicted as low-rated — potentially good recipes that the model mistakenly devalues.
+
+---
+
+### ✅ Strengths
+
+- **Strong at detecting highly rated recipes**:  
+  With 34,722 true positives, the model performs well on the majority class (high ratings).
+
+- **Substantial improvement in low-rating detection** compared to the baseline:  
+  Unlike the baseline model that failed to detect any low-rated recipes, this model correctly identifies **1,792** of them.
+
+---
+
+### ⚠️ Weaknesses
+
+- **Low precision and recall for Class 0 (Low Rating)**:  
+  - Precision is limited due to **3,681 false positives**.
+  - Recall for low ratings is approximately **32.7%**:  
+    \[
+    \frac{1792}{1792 + 3681} \approx 0.327
+    \]
+
+- **High number of false negatives (6,691)**:  
+  Many high-rated recipes are missed, which could negatively affect user trust in recipe recommendations.
+
+
+
