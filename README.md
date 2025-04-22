@@ -151,11 +151,11 @@ This box plot displays the distribution of sugar content across different rating
 | High          | 4.35       | 19018       |
 | Very High     | 4.27       | 17958       |
 
-The data suggests that recipes with around 3 to 8 ingredients tend to receive the highest average ratings. This may indicate a user preference for recipes that are neither too simple nor too complex—balancing ease of preparation with flavor and variety. Recipes with very few ingredients might be seen as too basic, while those with too many could feel overwhelming or impractical for everyday cooking.
+Recipes with lower calorie content (Very Low and Low) have slightly higher average ratings than high-calorie dishes. This suggests a possible health-conscious trend among users, where lighter meals are more appreciated. However, the drop-off is gradual, indicating that users don’t necessarily dislike high-calorie recipes, just that lighter options are more broadly favored.
 
 #### Ingredients Group
 <iframe src="assets/ingredients_group.html" width="100%" height="450" frameborder="0" style="margin:0;padding:0;"></iframe>
-The trend is clear: shorter prep times receive higher average ratings. Recipes under 15 minutes are the most highly rated, and the average rating declines as the prep time increases. This supports the idea that users tend to favor quick, convenient recipes, especially for weeknight cooking, reinforcing that ease and efficiency are major drivers of satisfaction.
+The data suggests that recipes with around 3 to 8 ingredients tend to receive the highest average ratings. This may indicate a user preference for recipes that are neither too simple nor too complex—balancing ease of preparation with flavor and variety. Recipes with very few ingredients might be seen as too basic, while those with too many could feel overwhelming or impractical for everyday cooking.
 
 #### Time Group
 <iframe src="assets/time_group.html" width="100%" height="450" frameborder="0" style="margin:0;padding:0;"></iframe>
