@@ -65,7 +65,6 @@ Here is the head of the data :
  ></iframe>
 
 
-
 Here is a univariate analysis of distributions from the data : 
 
  <iframe
@@ -84,7 +83,7 @@ This plot shows the distribution of the number of ingredients used in recipes. T
  frameborder="0"
  ></iframe>
 
- The calorie distribution is right-skewed, with most recipes containing fewer than 1000 calories. There are a few extreme outliers with very high caloric values, likely from dense or multi-serving dishes. This plot helps illustrate the diversity in recipe health profiles and can guide users looking for lighter or heavier meals.
+The calorie distribution is right-skewed, with most recipes containing fewer than 1000 calories. There are a few extreme outliers with very high caloric values, likely from dense or multi-serving dishes. This plot helps illustrate the diversity in recipe health profiles and can guide users looking for lighter or heavier meals.
 
  <iframe
  src="assets/prep_time_distribution.html"
@@ -93,7 +92,7 @@ This plot shows the distribution of the number of ingredients used in recipes. T
  frameborder="0"
  ></iframe>
 
- The preparation time distribution spans a wide range, but the majority of recipes take between 10 and 100 minutes. Using a log scale reveals the long tail of extremely time-intensive recipes. This confirms that while some elaborate dishes exist, most recipes are designed to be time-efficient.
+The preparation time distribution spans a wide range, but the majority of recipes take between 10 and 100 minutes. Using a log scale reveals the long tail of extremely time-intensive recipes. This confirms that while some elaborate dishes exist, most recipes are designed to be time-efficient.
 
 <iframe
  src="assets/rating_distribution.html"
@@ -102,4 +101,44 @@ This plot shows the distribution of the number of ingredients used in recipes. T
  frameborder="0"
  ></iframe>
 
- The rating distribution is highly skewed toward the maximum rating of 5, indicating that users generally rate recipes very favorably. While this suggests strong satisfaction, it also limits the ability to differentiate between moderately and highly liked recipes, which is something to consider in modeling user preferences.
+The rating distribution is highly skewed toward the maximum rating of 5, indicating that users generally rate recipes very favorably. While this suggests strong satisfaction, it also limits the ability to differentiate between moderately and highly liked recipes, which is something to consider in modeling user preferences.
+
+
+
+Here is a bivariate analysis of distributions from the data : 
+
+<iframe
+ src="assets/calories_vs_rating.html"
+ width="1000"
+ height="800"
+ frameborder="0"
+ ></iframe>
+
+This scatter plot explores the relationship between calories and user ratings. There is no strong correlation, but we observe that high-calorie recipes are rated just as favorably as low-calorie ones, suggesting that calorie content does not significantly affect user satisfaction.
+
+<iframe
+ src="assets/ingredients_vs_rating.html"
+ width="1000"
+ height="800"
+ frameborder="0"
+ ></iframe>
+
+This box plot shows how the number of ingredients relates to user ratings. While most recipes are highly rated regardless of complexity, those with very few or very many ingredients show slightly more variability, hinting that balance in ingredient count may appeal more consistently to users.
+
+<iframe
+ src="assets/prep_time_vs_rating.html"
+ width="1000"
+ height="800"
+ frameborder="0"
+ ></iframe>
+
+This scatter plot, with preparation time shown on a logarithmic scale, reveals that most highly rated recipes cluster between 10 and 100 minutes of prep time. Recipes with extremely short or long prep times show more mixed ratings, suggesting that users prefer moderate effort in cooking.
+
+<iframe
+ src="assets/sugar_by_rating.html"
+ width="1000"
+ height="800"
+ frameborder="0"
+ ></iframe>
+
+This box plot displays the distribution of sugar content across different rating levels. There is no clear pattern, indicating that sugar level alone is not a strong driver of user satisfaction. However, outliers suggest that some exceptionally sweet or non-sweet recipes still achieve high ratings.
