@@ -239,5 +239,69 @@ Performance metrics on the test set:
 
 - **Accuracy**: 88.3%
 - **Precision (Class 1 - High Rating)**: 0.88  
-- **Recall (Class 1 - High Rating)**:
+- **Recall (Class 1 - High Rating)**: 1.00  
+- **F1-score (Class 1 - High Rating)**: 0.94  
+- **Class 0 (Low Rating)**: Precision/Recall/F1 = 0.00
 
+⚠️ **Note**: The model never predicts Class 0 (low ratings), which is a major issue.
+
+---
+
+## 🤔 Is This a Good Model?
+
+While the accuracy appears high (**88.3%**), the model is **not good** in its current state due to **extreme class imbalance**:
+
+- It fails to identify any low-rated recipes.
+- High accuracy is misleading because the model predicts every recipe as high-rated, benefiting from the skewed distribution.
+
+### Suggested Improvements:
+- Use `class_weight='balanced'` in logistic regression.
+- Try resampling techniques (e.g., SMOTE, undersampling).
+- Add more features:
+  - Nutritional values (e.g., `calories`, `protein_g`, etc.)
+  - Recipe structure (e.g., `n_steps`)
+  - Engineered features (e.g., time per ingredient)
+
+## 🔍 Final Model Rationale and Evaluation
+
+### 🧩 Feature Engineering: What I Added and Why
+
+To improve my model, I added two engineered features based on domain intuition and patterns observed during exploratory analysis:
+
+- **`log_minutes`**  
+  Prep times were highly skewed, with some recipes taking extremely long to prepare. Taking the natural logarithm of preparation time (`log1p`) helped normalize this feature and reduce the impact of extreme outliers. Log transformations are especially useful for tree-based models that may otherwise overweight rare, large values.
+
+- **`fat_to_protein_ratio`**  
+  Rather than considering `total_fat_g` and `protein_g` separately, I created a ratio feature to capture a recipe’s **nutritional richness vs. healthfulness**. This ratio provides insight into how indulgent or balanced a recipe might be, which is likely to influence user ratings. For example, protein-rich meals may be preferred for health-conscious users, while fatty recipes may appeal more to indulgence seekers.
+
+These features were chosen **based on the data-generating process**—not just for boosting accuracy. They reflect reasonable assumptions about what might drive user satisfaction, such as ease of preparation (normalized time) and nutritional balance (fat vs. protein).
+
+---
+
+### 🤖 Model Selection: Random Forest Classifier
+
+I selected the **Random Forest** classifier for the final model due to its ability to:
+
+- Capture **non-linear relationships** between features and outcomes  
+- Handle **interactions** between multiple predictors without explicit specification  
+- Be robust to **outliers** and **correlated features**  
+- Naturally support **class weighting** to mitigate imbalance
+
+---
+
+### 🔧 Hyperparameter Tuning
+
+To optimize model performance, I used **`GridSearchCV` with 5-fold cross-validation**, tuning the following hyperparameters:
+
+- `n_estimators`: Number of trees in the forest → [50, 100]  
+- `max_depth`: Maximum tree depth → [5, 10, None]  
+- `min_samples_split`: Minimum number of samples to split a node → [2, 5]
+
+**Best-performing combination**:
+
+```python
+{
+  'classifier__n_estimators': 50,
+  'classifier__max_depth': None,
+  'classifier__min_samples_split': 2
+}
