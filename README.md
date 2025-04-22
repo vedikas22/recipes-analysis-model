@@ -32,9 +32,10 @@ Question : What makes a recipe well-rated? We want to understand how different c
 
 ## 📋 Dataset Overview
 
-### 📦 Number of Rows
+### 📦 Number of Rows and Columns
 
-The merged dataset contains **46,886 rows**, each representing a unique user interaction with a recipe for which both recipe metadata and a user rating are available.
+- **Number of Rows**: 46,886  
+- **Number of Columns**: 14 (relevant to our prediction task)
 
 ---
 
