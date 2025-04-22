@@ -12,6 +12,8 @@ This project uses data from two sources:
 - `RAW_recipes.csv`: 83,782 recipes with ingredients, nutrition facts, cooking steps, and preparation time.
 - `RAW_interactions.csv`: 731,927 user interactions with these recipes (ratings, reviews, timestamps).
 
+Question : What makes a recipe well-rated? We want to understand how different characteristics of a recipe like the number of ingredients, total preparation time, and nutritional content correlate with high user ratings.
+
 **Why this matters**:
 
 - It helps users find recipes they'll likely enjoy.  
@@ -28,6 +30,40 @@ This project uses data from two sources:
 
 ---
 
+## 📋 Dataset Overview
+
+### 📦 Number of Rows
+
+The merged dataset contains **46,886 rows**, each representing a unique user interaction with a recipe for which both recipe metadata and a user rating are available.
+
+---
+
+### 📌 Relevant Columns
+
+Below are the columns used to frame and answer the central prediction question — *Can we predict whether a recipe will receive a high user rating based on its structure and nutritional content?*
+
+| Column Name          | Description                                                                 |
+|----------------------|-----------------------------------------------------------------------------|
+| `rating`             | User rating for the recipe (1 to 5 stars). Used to create the target label. |
+| `high_rating`        | Binary target variable: 1 if rating ≥ 4, else 0.                            |
+| `minutes`            | Total time in minutes required to prepare the recipe.                       |
+| `n_ingredients`      | Number of ingredients listed in the recipe.                                 |
+| `n_steps`            | Number of steps in the cooking instructions.                                |
+| `calories`           | Total calories per serving.                                                 |
+| `total_fat_g`        | Total fat content per serving (in grams).                                   |
+| `sugar_g`            | Sugar content per serving (in grams).                                       |
+| `sodium_mg`          | Sodium content per serving (in milligrams).                                 |
+| `protein_g`          | Protein content per serving (in grams).                                     |
+| `saturated_fat_g`    | Saturated fat per serving (in grams).                                       |
+| `carbohydrates_g`    | Carbohydrates per serving (in grams).                                       |
+| `log_minutes`        | Log-transformed preparation time to reduce skewness.                        |
+| `fat_to_protein_ratio` | Ratio of fat to protein, capturing nutritional richness.                  |
+
+---
+
+These features were selected because they are **available at the time of recipe posting** and are likely to influence **user satisfaction** and **ratings**. The `high_rating` column serves as the **binary response variable** for our classification task.
+
+---- 
 ## 🧹 Data Cleaning and Exploratory Data Analysis
 
 To prepare the data for analysis, I began by merging two separate datasets: one containing user interactions with recipes (such as ratings) and another containing detailed recipe information. This merge was essential because it brought together user behavior and recipe characteristics, allowing for meaningful analysis of how recipe attributes influence ratings.
