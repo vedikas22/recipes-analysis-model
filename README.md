@@ -109,6 +109,7 @@ This scatter plot, with preparation time shown on a logarithmic scale, reveals t
 This box plot displays the distribution of sugar content across different rating levels. There is no clear pattern, indicating that sugar level alone is not a strong driver of user satisfaction. However, outliers suggest that some exceptionally sweet or non-sweet recipes still achieve high ratings.
 
 Here are the Interesting Aggregates discovered:
+
 | calorie_level | avg_rating | num_ratings |
 |---------------|------------|-------------|
 | Very Low      | 4.41       | 72671       |
