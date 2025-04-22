@@ -55,14 +55,14 @@ Finally, I checked for missing values in key columns such as rating, preparation
 
 Overall, these cleaning steps were closely aligned with how the data was likely generated—through user submissions, automated scraping, and imperfect manual inputs. Cleaning the data this way improved the quality and interpretability of the visualizations and ensured that the trends I observed reflected genuine patterns rather than noise or errors.
 
-Here is the head of the data :
+# Here is the head of the data :
 
  <div style="margin: 0 auto; padding: 0; max-width: 800px;">
   <iframe src="assets/table.html" width="100%" height="450" frameborder="0" style="margin: 0; padding: 0;"></iframe>
 </div>
 
 
-Here is a univariate analysis of distributions from the data : 
+# Here is a univariate analysis of distributions from the data : 
 
 <div style="margin: 0 auto; padding: 0; max-width: 800px;">
   <iframe src="assets/ingredients_distribution.html" width="100%" height="450" frameborder="0" style="margin: 0; padding: 0;"></iframe>
@@ -82,7 +82,7 @@ The calorie distribution is right-skewed, with most recipes containing fewer tha
 
 The rating distribution is highly skewed toward the maximum rating of 5, indicating that users generally rate recipes very favorably. While this suggests strong satisfaction, it also limits the ability to differentiate between moderately and highly liked recipes, which is something to consider in modeling user preferences.
 
-Here is a bivariate analysis of distributions from the data : 
+# Here is a bivariate analysis of distributions from the data : 
 
 <div style="margin: 0 auto; padding: 0; max-width: 800px;">
   <iframe src="assets/calories_vs_rating.html" width="100%" height="450" frameborder="0" style="margin: 0; padding: 0;"></iframe>
@@ -123,5 +123,18 @@ The data suggests that recipes with around 3 to 8 ingredients tend to receive th
 The trend is clear: shorter prep times receive higher average ratings. Recipes under 15 minutes are the most highly rated, and the average rating declines as the prep time increases. This supports the idea that users tend to favor quick, convenient recipes, especially for weeknight cooking, reinforcing that ease and efficiency are major drivers of satisfaction.
 <iframe src="assets/time_group.html" width="100%" height="450" frameborder="0" style="margin:0;padding:0;"></iframe>
 Recipes with lower calorie content (Very Low and Low) have slightly higher average ratings than high-calorie dishes. This suggests a possible health-conscious trend among users, where lighter meals are more appreciated. However, the drop-off is gradual, indicating that users don’t necessarily dislike high-calorie recipes, just that lighter options are more broadly favored.
-<iframe src="assets/calorie_group.html" width="100%" height="450" frameborder="0" style="margin:0;padding:0;"></iframe>
+
+# Handling Missing Values with Median Imputation
+
+To handle missing values in key numerical columns such as `minutes`, `calories`, and `sugar_g`, I used **median imputation** via `SimpleImputer` from scikit-learn. The median is a robust measure of central tendency, making it ideal for skewed distributions and resistant to outliers—especially relevant in recipe data where a few entries may have unusually high prep times or calorie counts.
+
+After imputation, I confirmed that all missing values were resolved. This step ensures that subsequent analyses and visualizations are not affected by gaps or NaNs in the data.
+
+The interactive chart below compares the **distributions before and after imputation** for three key columns. You can observe that the shapes of the distributions remain mostly unchanged, with a minor spike at the median values—validating that median imputation preserved the original data structure while filling in missing values.
+
+<div style="margin: 0 auto; padding: 0; max-width: 800px;">
+  <iframe src="assets/imputation_comparison.html" width="100%" height="450" frameborder="0" style="margin: 0; padding: 0;"></iframe>
+</div>
+
+
 
