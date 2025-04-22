@@ -97,7 +97,7 @@ The rating distribution is highly skewed toward the maximum rating of 5, indicat
 Here is a bivariate analysis of distributions from the data : 
 
 <div style="margin: 0 auto; padding: 0; max-width: 800px;">
-  <iframe src="/assets/calories_vs_rating.html" width="100%" height="450" frameborder="0" style="margin: 0; padding: 0;"></iframe>
+  <iframe src="assets/calories_vs_rating.html" width="100%" height="450" frameborder="0" style="margin: 0; padding: 0;"></iframe>
 </div>
 
 This scatter plot explores the relationship between calories and user ratings. There is no strong correlation, but we observe that high-calorie recipes are rated just as favorably as low-calorie ones, suggesting that calorie content does not significantly affect user satisfaction.
