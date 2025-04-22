@@ -70,9 +70,36 @@ Here is a univariate analysis of distributions from the data :
 
  <iframe
  src="assets/ingredients_distribution.html"
- width="800"
- height="600"
+ width="1000"
+ height="800"
  frameborder="0"
  ></iframe>
 
-This plot shows the distribution of the number of ingredients used in recipes. The majority of recipes tend to include between 5 and 15 ingredients, with a sharp drop-off for longer ingredient lists. This suggests that simpler recipes are more common, potentially because they are easier for users to prepare — an insight that aligns with our goal of identifying characteristics of highly rated, accessible recipes.
+This plot shows the distribution of the number of ingredients used in recipes. The majority of recipes tend to include between 5 and 15 ingredients, with a sharp drop-off for longer ingredient lists. This suggests that simpler recipes are more common, potentially because they are easier for users to prepare. This is an insight that aligns with our goal of identifying characteristics of highly rated, accessible recipes.
+
+ <iframe
+ src="assets/calories_distribution.html"
+ width="1000"
+ height="800"
+ frameborder="0"
+ ></iframe>
+
+ The calorie distribution is right-skewed, with most recipes containing fewer than 1000 calories. There are a few extreme outliers with very high caloric values, likely from dense or multi-serving dishes. This plot helps illustrate the diversity in recipe health profiles and can guide users looking for lighter or heavier meals.
+
+ <iframe
+ src="assets/prep_time_distribution.html"
+ width="1000"
+ height="800"
+ frameborder="0"
+ ></iframe>
+
+ The preparation time distribution spans a wide range, but the majority of recipes take between 10 and 100 minutes. Using a log scale reveals the long tail of extremely time-intensive recipes. This confirms that while some elaborate dishes exist, most recipes are designed to be time-efficient.
+
+<iframe
+ src="assets/rating_distribution.html"
+ width="1000"
+ height="800"
+ frameborder="0"
+ ></iframe>
+
+ The rating distribution is highly skewed toward the maximum rating of 5, indicating that users generally rate recipes very favorably. While this suggests strong satisfaction, it also limits the ability to differentiate between moderately and highly liked recipes, which is something to consider in modeling user preferences.
