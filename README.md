@@ -321,9 +321,7 @@ While the baseline model achieved higher **accuracy**, it failed to predict **an
 
 ### 📊 Confusion Matrix Summary
 
-<div style="margin: 0 auto; padding: 0; max-width: 800px;">
-  <iframe src="assets/confusion_matrix.html" width="100%" height="450" frameborder="0" style="margin: 0; padding: 0;"></iframe>
-</div>
+![Confusion Matrix](assets/confusion_matrix.png)
 
 |                      | Predicted Low (0) | Predicted High (1) | Total |
 |----------------------|-------------------|---------------------|-------|
